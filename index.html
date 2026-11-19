@@ -10,11 +10,93 @@
 <style>
 :root{--ink:#172033;--muted:#64748b;--line:#e5eaf1;--blue:#2457d6;--pale:#f3f6fc;--dark:#101827}
 *{box-sizing:border-box}body{margin:0;font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}.top{background:var(--dark);color:#fff;padding:16px 0}.brand{font-weight:800;letter-spacing:.02em}.hero{background:linear-gradient(135deg,#101827,#203b70);color:#fff;padding:64px 0 58px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:800;color:#b9ccff}.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.1;max-width:850px;margin:14px 0}.hero p{max-width:760px;color:#d9e3f7;font-size:18px}.meta{font-size:13px;color:#b9c7dd}.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:48px;padding:46px 0}.article h2{font-size:28px;line-height:1.25;margin:44px 0 14px}.article h3{font-size:20px;margin:26px 0 8px}.article p{margin:12px 0}.note{background:var(--pale);border-left:4px solid var(--blue);padding:16px 18px;border-radius:8px;margin:22px 0}.toc{position:sticky;top:20px;align-self:start;border:1px solid var(--line);border-radius:12px;padding:18px}.toc strong{display:block;margin-bottom:8px}.toc a{display:block;font-size:14px;padding:5px 0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:20px 0}table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f5f7fb;font-weight:750}tr:last-child td{border-bottom:0}.pill{display:inline-block;background:#eaf0ff;color:#2349ad;padding:2px 8px;border-radius:20px;font-size:12px;font-weight:700}.provider{border:1px solid var(--line);border-radius:12px;padding:20px;margin:18px 0}.provider h3{margin:0 0 8px}.small{color:var(--muted);font-size:13px}.footer{background:#f5f7fb;padding:28px 0;color:var(--muted);font-size:13px;margin-top:40px}.btn{display:inline-block;background:var(--blue);color:white;padding:9px 14px;border-radius:7px;font-weight:700;font-size:14px}.btn:hover{color:white;text-decoration:none;background:#1744b4}ul{padding-left:22px}li{margin:6px 0}.faq{padding:15px 0;border-bottom:1px solid var(--line)}.faq h3{margin:0 0 5px}@media(max-width:800px){.layout{grid-template-columns:1fr}.toc{position:static;order:-1}.hero{padding:44px 0}.wrap{width:min(100% - 28px,1080px)}}
+
+/* Presentation refresh: layout and styling only; article copy, links, pricing and SEO metadata remain unchanged. */
+:root{--ink:#172033;--muted:#68758b;--line:#e5eaf2;--blue:#4169e8;--pale:#f4f7fc;--dark:#0b1220;--surface:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:#f7f9fd;color:#182238;line-height:1.75}
+a{color:#365fe0}
+.wrap{width:min(1160px,calc(100% - 48px))}
+.top{position:relative;background:#0b1220;border-bottom:1px solid rgba(255,255,255,.09);padding:0}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;letter-spacing:.04em;font-size:13px}
+.brand:hover{text-decoration:none;color:#fff}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#5278ff,#7049d8);font-size:14px;font-weight:900;letter-spacing:-.05em;box-shadow:0 7px 22px #3459d955}
+.brand-sub{display:block;color:#8e9bb2;font-size:9px;letter-spacing:.16em;margin-top:2px}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:#c4cde0;font-size:13px;font-weight:650}
+.nav-links a:hover{color:#fff;text-decoration:none}
+.nav-cta{border:1px solid #526de5;border-radius:9px;padding:9px 13px;color:#fff;font-size:13px;font-weight:750}
+.nav-cta:hover{background:#4169e8;color:#fff;text-decoration:none}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 45%,#243c79 0%,transparent 35%),linear-gradient(115deg,#0b1220 0%,#111d36 58%,#182b54 100%);padding:76px 0 72px}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(90deg,transparent,#000 55%,#000)}
+.hero-glow{position:absolute;width:420px;height:420px;border-radius:50%;right:8%;top:4%;background:#476dff22;filter:blur(55px)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:34px}
+.eyebrow{display:flex;align-items:center;gap:9px;color:#aebfff;font-size:10px;letter-spacing:.15em;font-weight:850}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#61e4b1;box-shadow:0 0 0 4px #61e4b122}
+.eyebrow-sep{color:#65789f}
+.hero h1{font-size:clamp(39px,5.2vw,66px);line-height:1.04;letter-spacing:-.045em;max-width:740px;margin:22px 0 18px}
+.hero h1 span{color:#9db5ff}
+.hero p{max-width:640px;color:#c5d0e4;font-size:17px;line-height:1.75}
+.hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:27px 0 24px}
+.hero-button{display:inline-flex;align-items:center;gap:18px;background:#5477f4;color:#fff;padding:13px 18px;border-radius:9px;font-weight:800;box-shadow:0 9px 26px #4169e855}
+.hero-button:hover{background:#6685ff;color:#fff;text-decoration:none;transform:translateY(-1px)}
+.hero-secondary{color:#d2dcf0;font-size:13px;font-weight:700}
+.hero-secondary:hover{color:#fff}
+.hero .meta{display:flex;gap:18px;flex-wrap:wrap;color:#9eacc5;font-size:11px}
+.hero-visual{height:340px;position:relative;display:grid;place-items:center}
+.visual-orbit{position:absolute;border:1px solid #8ea8ff26;border-radius:50%;transform:rotate(-22deg)}
+.orbit-one{width:390px;height:220px}.orbit-two{width:310px;height:300px;transform:rotate(48deg)}
+.server-stack{position:relative;z-index:1;width:270px;padding:17px;border:1px solid #8ea8ff55;border-radius:17px;background:linear-gradient(145deg,#263b68dd,#101b34ee);box-shadow:0 28px 70px #03091688;transform:rotate(-5deg)}
+.server-top{display:flex;align-items:center;gap:6px;color:#aebfff;font-size:10px;letter-spacing:.12em;margin-bottom:13px}
+.server-top span{width:6px;height:6px;background:#6ee7b7;border-radius:50%}.server-top span:nth-child(2){background:#f8c66b}.server-top span:nth-child(3){background:#91a8ff}.server-top b{margin-left:auto;font-size:9px}
+.server-unit{height:62px;display:flex;align-items:center;gap:12px;padding:10px 12px;margin-top:8px;border:1px solid #8299c52b;border-radius:9px;background:#0b1429a8}
+.server-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:#4969c844;color:#a9bdff;font-size:20px}
+.server-lines{flex:1}.server-lines i{display:block;height:5px;border-radius:8px;background:#8499c755;width:85%;margin:5px 0}.server-lines i+ i{width:55%;background:#8499c733}
+.server-status{font-size:8px;letter-spacing:.1em;color:#6ee7b7;font-weight:800}
+.float-tag{position:absolute;z-index:2;background:#fff;border:1px solid #e6ebf5;border-radius:12px;padding:11px 14px;box-shadow:0 15px 40px #03091644;color:#172033}
+.float-tag small{display:block;font-size:8px;letter-spacing:.13em;color:#71809a;font-weight:850}
+.float-tag strong{display:block;font-size:26px;line-height:1.25;color:#1c2d53}
+.float-tag strong span{font-size:11px;color:#71809a}
+.float-tag em{font-style:normal;font-size:10px;color:#64748b}
+.tag-price{left:0;bottom:25px}.tag-count{right:0;top:28px;display:flex;align-items:center;gap:10px}.tag-count strong{font-size:31px;color:#4568df}
+.trust-strip{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 24px #18294a08}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:19px 0}
+.trust-grid>div{display:flex;align-items:center;gap:10px;padding:4px 22px;border-right:1px solid var(--line)}
+.trust-grid>div:first-child{padding-left:0}.trust-grid>div:last-child{border:0}
+.trust-grid strong{font-size:16px;color:#263d76}.trust-grid span{font-size:11px;color:#77839a}
+.layout{grid-template-columns:minmax(0,1fr) 250px;gap:42px;padding:42px 0}
+.article{background:#fff;border:1px solid #e9edf4;border-radius:16px;padding:clamp(22px,4vw,48px);box-shadow:0 12px 35px #172b4d08;min-width:0}
+.article>p:first-child{font-size:17px;color:#46536b}
+.article h2{font-size:27px;letter-spacing:-.025em;color:#172747;margin:48px 0 15px;padding-top:5px}
+.article h3{color:#1e3155}
+.note{background:linear-gradient(120deg,#eef3ff,#f7f9ff);border:1px solid #dce5ff;border-left:4px solid #5275ee;border-radius:10px;padding:18px 20px}
+.toc{position:sticky;top:22px;background:#fff;border:1px solid #e7ecf4;border-radius:14px;padding:20px;box-shadow:0 10px 28px #172b4d08}
+.toc strong{font-size:14px;color:#1e3155;margin-bottom:10px}
+.toc a{color:#64728b;font-size:12px;padding:7px 0;border-bottom:1px solid #f0f2f7}
+.toc a:last-child{border:0}.toc a:hover{color:#365fe0}
+.table-wrap{border:1px solid #e4eaf3;border-radius:12px;box-shadow:0 8px 22px #172b4d08}
+table{font-size:13px}th{background:#f0f4fc;color:#30456f;font-size:11px;text-transform:uppercase;letter-spacing:.045em}td{color:#48566d}tbody tr:hover{background:#f8faff}
+.provider{border:1px solid #e5eaf3;border-radius:13px;padding:21px 22px;margin:16px 0;transition:border-color .2s,box-shadow .2s}
+.provider:hover{border-color:#b9c9ff;box-shadow:0 10px 26px #3158bd0d}
+.provider h3{font-size:18px}
+.provider a{font-size:13px;font-weight:750}
+.pill{background:#edf2ff;color:#3558c0}
+.btn{background:#4169e8;border-radius:9px;padding:12px 17px}
+.faq{padding:17px 0;border-bottom:1px solid #e9edf4}
+.faq h3{font-size:16px}
+.footer{background:#0b1220;color:#9eacc5;margin-top:34px;padding:30px 0}
+@media(max-width:900px){.nav-links{gap:14px}.hero-grid{grid-template-columns:1fr .8fr}.hero-visual{transform:scale(.88)}.layout{grid-template-columns:minmax(0,1fr) 220px;gap:24px}}
+@media(max-width:700px){.wrap{width:calc(100% - 30px)}.nav{min-height:66px}.nav-links{display:none}.nav-cta{font-size:11px;padding:8px 10px}.hero{padding:52px 0 42px}.hero-grid{grid-template-columns:1fr;gap:12px}.hero h1{font-size:clamp(38px,10vw,54px)}.hero p{font-size:15px}.hero-visual{height:260px;transform:scale(.82);transform-origin:top center;margin:0 0 -35px}.trust-grid{grid-template-columns:repeat(2,1fr);gap:0}.trust-grid>div{padding:10px 8px;border-right:0;border-bottom:1px solid var(--line)}.trust-grid>div:first-child{padding-left:8px}.trust-grid>div:nth-child(odd){border-right:1px solid var(--line)}.trust-grid>div:nth-last-child(-n+2){border-bottom:0}.layout{grid-template-columns:1fr;padding:24px 0}.toc{position:static;order:-1;display:grid;grid-template-columns:repeat(2,1fr);gap:0 14px}.toc strong{grid-column:1/-1}.article{padding:22px 17px;border-radius:12px}.article h2{font-size:24px;margin-top:38px}.hero .meta{gap:8px 14px}}
+@media(max-width:390px){.brand{font-size:11px}.brand-mark{width:34px;height:34px}.nav-cta{font-size:10px}.hero-actions{gap:14px}.hero-button{padding:11px 13px}.hero-visual{margin-left:-12px;margin-right:-12px;transform:scale(.72);height:230px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap brand">BLACK FRIDAY VPS GUIDE <span class="small" style="color:#b9c7dd;font-weight:500">/ 2026 EDITION</span></div></header>
-<section class="hero"><div class="wrap"><div class="eyebrow">Independent deal research · Updated November 16, 2026</div><h1>Black Friday VPS Hosting Deals 2026: 14 Hosts Compared</h1><p>Compare current VPS offers by starting price, renewal cost and server management. This guide helps you separate a genuinely useful deal from a low introductory price that becomes expensive later.</p><div class="meta">Research-led buying guide · Prices in USD · Offers can change</div></div></section>
+<header class="top"><div class="wrap nav"><a class="brand" href="#top"><span class="brand-mark">BF</span><span>BLACK FRIDAY VPS<span class="brand-sub">INDEPENDENT HOSTING GUIDE</span></span></a><nav class="nav-links"><a href="#tracker">Compare deals</a><a href="#best-picks">Top picks</a><a href="#checklist">Buying guide</a><a href="#faq">FAQs</a></nav><a class="nav-cta" href="#tracker">Explore deals <span>↗</span></a></div></header>
+<section class="hero" id="top"><div class="hero-glow"></div><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> INDEPENDENT DEAL RESEARCH <span class="eyebrow-sep">·</span> UPDATED NOVEMBER 16, 2026</div><h1>Find your next VPS.<br><span>Pay less this Black Friday.</span></h1><p>Compare 14 VPS hosting providers by starting price, renewal cost and server management. Look beyond the headline discount and find a plan that fits your workload.</p><div class="hero-actions"><a class="hero-button" href="#tracker">Compare VPS deals <span>→</span></a><a class="hero-secondary" href="#checklist">Read the buying checklist</a></div><div class="meta"><span>✓ Research-led buying guide</span><span>✓ Prices in USD</span><span>✓ Offers can change</span></div></div><div class="hero-visual" aria-label="VPS hosting comparison illustration"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="server-stack"><div class="server-top"><span></span><span></span><span></span><b>VPS / 2026</b></div><div class="server-unit"><div class="server-icon">⌘</div><div class="server-lines"><i></i><i></i></div><div class="server-status">ONLINE</div></div><div class="server-unit"><div class="server-icon">◇</div><div class="server-lines"><i></i><i></i></div><div class="server-status">SECURE</div></div><div class="server-unit"><div class="server-icon">↗</div><div class="server-lines"><i></i><i></i></div><div class="server-status">READY</div></div></div><div class="float-tag tag-price"><small>STARTING PRICE</small><strong>$3<span>/mo</span></strong><em>InterServer</em></div><div class="float-tag tag-count"><strong>14</strong><small>PROVIDERS<br>COMPARED</small></div></div></div></section>
+<section class="trust-strip"><div class="wrap trust-grid"><div><strong>14</strong><span>VPS providers reviewed</span></div><div><strong>Pricing</strong><span>Intro + renewal costs</span></div><div><strong>Specs</strong><span>CPU, RAM & storage</span></div><div><strong>Practical</strong><span>Buying guidance</span></div></div></section>
 <main class="wrap layout"><article class="article">
 <p>Black Friday can be a good time to move from shared hosting to a virtual private server. A VPS gives you a defined share of CPU, memory and storage, plus more control over the server environment. But the discount percentage alone does not tell you whether a deal is worthwhile.</p>
 <div class="note"><strong>Quick takeaway:</strong> InterServer is the lowest monthly starting price in this comparison at $3/month. YouStable is a strong India-focused option at $3.67/month, while UltaHost is a managed VPS choice from $5.52/month. Always compare renewal pricing and the length of the billing term before ordering.</div>
